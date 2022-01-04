@@ -6,14 +6,17 @@ export const Web3Context = createContext({
     setWeb3: () => { },
     connect: () => {},
     accounts: [],
+    connected: false
 });
 
 export const Web3Provider = ({ children }) => {
     const [web3, setWeb3] = useState(null);
     const [accounts, setAccounts] = useState([]);
+    const [connected, setConnected] = useState(false);
     
     useEffect(() => {
         if (!web3) return;
+        else setConnected(true);
         web3.eth.requestAccounts().then(setAccounts);
         if (web3.currentProvider.isMetaMask) {
             web3.currentProvider.on('accountsChanged', setAccounts);
@@ -26,11 +29,12 @@ export const Web3Provider = ({ children }) => {
 
     async function connect() {
         const _web3 = new Web3(window.ethereum);
+        setConnected(true);
         setWeb3(_web3);
     }
 
     return <Web3Context.Provider
-        value={{ web3, setWeb3, accounts, connect }}>
+        value={{ web3, setWeb3, accounts, connect, connected }}>
         {children}
       </Web3Context.Provider>
 }
