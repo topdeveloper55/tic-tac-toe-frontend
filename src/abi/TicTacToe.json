@@ -58,6 +58,19 @@
           "type": "uint256"
         }
       ],
+      "name": "endRoom",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "roomId",
+          "type": "uint256"
+        }
+      ],
       "name": "goToRoom",
       "outputs": [],
       "stateMutability": "nonpayable",
@@ -162,6 +175,11 @@
       "name": "rooms",
       "outputs": [
         {
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        },
+        {
           "internalType": "address",
           "name": "player1",
           "type": "address"
@@ -185,6 +203,11 @@
           "internalType": "bool",
           "name": "end",
           "type": "bool"
+        },
+        {
+          "internalType": "address",
+          "name": "winner",
+          "type": "address"
         }
       ],
       "stateMutability": "view",

@@ -19,7 +19,10 @@ export const Web3Provider = ({ children }) => {
         else setConnected(true);
         web3.eth.requestAccounts().then(setAccounts);
         if (web3.currentProvider.isMetaMask) {
-            web3.currentProvider.on('accountsChanged', setAccounts);
+            web3.currentProvider.on('accountsChanged', (accounts) => {
+                setAccounts(accounts);
+                // window.location.reload();
+            });
             web3.currentProvider.on('chainChanged', (chainId) => {
                 window.location.reload();
             });
