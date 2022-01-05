@@ -6,8 +6,8 @@ import { Web3Context } from "./Web3Context";
 import TicABI from "./abi/TicTacToe.json";
 import TokenABI from "./abi/TicToken.json";
 
-const ticAddress = "0x7084a15d0E644c236A14a6fdB12F862D389d5D2A";
-const tokenAddress = "0x871F333b8064Fc6aa26a183712556B6e40E2C7cb";
+const ticAddress = "0xf229d63227280fCf73A84Ec295e18F403D795F2a";
+const tokenAddress = "0x24143E92dB1d4E483Fad326DD68A864Ca168Bcd7";
 
 const useStyles = makeStyles({
   input: {
